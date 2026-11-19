@@ -11,7 +11,7 @@ var j=1;
 var pk=1;
 var zoom=1;
 var first=1;
-var offset=7;
+var offset=0;
 var indx="L001";
 //---------------------------------------------------------------------------------------------------
 var LIST = new Array(195);
@@ -277,14 +277,25 @@ function ZOOM(){RST();zoom=-zoom;
                               document.getElementById("ZOOM").value="zoom"};
                 }
 //-------------------------------------------------------------------------------------------------------------------------
-// (3) MAIN DOUBLE-POP-FUNCTION
+// (3) MAIN DOUBLE-POP-FUNCTION  Update 19-11-2026  border:2px dashed #0969da;
 //-------------------------------------------------------------------------------------------------------------------------
+function makePop(url) {
+  return '<a href="' + url + '" target="_blank" rel="noopener" style="display:block; width:100%; height:100%; text-decoration:none;">' +
+    '<img src="' + url + '" style="width:100%; height:100%; object-fit:fill;" onerror="this.style.display=\'none\'; this.nextElementSibling.style.display=\'flex\';">' +
+    '<div style="display:none; width:100%; height:100%; min-height:500px; align-items:center; justify-content:center; flex-direction:column; background-color:#f0f4f8; color:#0969da; font-family:sans-serif; font-size:32px; font-weight:bold; text-align:center; box-sizing:border-box;">' +
+      '<span> HIER KLICKEN UM VOLLBILD ZU LADEN (RELOAD)</span>' +
+      '<span style="font-size:16px; font-weight:normal; color:#444; margin-top:10px;">frame blockiert</span>' +
+    '</div>' +
+  '</a>';
+}
+
 function POP(k){pk=first + k ; 
                 indx=("000"+(k+1).toString()).slice(-3);
                 document.getElementById("ACTU").value=indx;indx="L"+indx;
                 document.getElementById(indx).style.backgroundColor="aqua";
                 lnk=LIST[pk].slice(LIST[pk].indexOf('#')+2-LIST[pk].length);
-                pop="<a href="+ lnk +" target='_blank' rel='noopener'><img src="+ lnk + " alt='RELOAD'></a>";document.getElementById("Bild").innerHTML=pop};
+                pop = makePop(lnk);
+                document.getElementById("Bild").innerHTML=pop};
 //-------------------------------------------------------------------------------------------------------------------------
 // (4) RESPECTIVE LINK-BUTTON CALL-UP
 //-------------------------------------------------------------------------------------------------------------------------
