@@ -1,0 +1,414 @@
+<title>test2506270424.htm</title>
+<html>
+<style>img {width: 100%;height: 100%;}</style>
+<script language="javascript">
+//-------------------------------------------------------------------------------------------------------------------------
+// (0) HeadOfJavaScript (c)2018-2025-06-26Do 19h35 RWK NEW CAM.JS
+//-------------------------------------------------------------------------------------------------------------------------
+var lnk='https://wetter-peissenberg.de/jpg_verkleinern.php?datname=hoehendaten/webcam_hp_w.jpg';
+var pop="<a href="+ lnk +" target='_self' rel='noopener'><img src="+ lnk + " alt='RELOAD'></a>";
+var j=1;
+var pk=1;
+var zoom=1;
+var first=1;
+var offset=7;
+var indx="L001";
+//---------------------------------------------------------------------------------------------------
+var LIST = new Array(195);
+  LIST[0]="X000_Opentop        OpenTopoMap@12/48.0100/8.0100# https://xylokopa.hier-im-netz.de/OpenStreet/opentop.htm";
+  LIST[1]="Y001_BaarW        DWD-Temp Baar@12/48.0200/8.0200# https://www.wetter-bw.de/Internet/AM/NotesBwAM.nsf/Web_Stationen_Kultur/aa4d172efc260d48c1257ca700389dd0?OpenDocument&TableRow=3.1#3.";
+  LIST[2]="Y002_Freib°C       DWD-Temp FR @12/48.0300/8.0300# https://www.wetter-bw.de/Internet/AM/NotesBwAM.nsf/bwwebdwd/07956c616c772a02c1258043004911f1?OpenDocument";
+  LIST[3]="X003_Windy                Windy@12/48.0400/8.0400# https://embed.windy.com/embed2.html?lat=47.986&lon=8.819&zoom=9&level=surface&overlay=rain&menu=&message=true&marker=&forecast=12&calendar=now&location=coordinates&type=map&actualGrid=&metricWind=kt&metricTemp=%C2%B0C";
+  LIST[4]="Z004_Wolken           Wolkenzug@12/48.0600/8.0600# https://www.zebrafell.de/wetter/wolke.gif";
+  LIST[5]="Z005_DWrad            DWD-Radar@12/48.0700/8.0700# http://www.dwd.de/DWD/wetter/radar/radfilm_brd_akt.gif";
+  LIST[6]="Z006_BWrad             BW-Radar@12/48.0800/8.0800# https://www.wettergefahren.de/DWD/wetter/radar/Webradar_Suedwest.jpg";
+  LIST[7]="Z007_IMKrad           IMK-Radar@12/48.0900/8.0900# https://www.imk-radar.de/Radarbilder-frei/frei.gif";
+  LIST[8]="Z008_DWDIso           DWD-Isoba@12/48.0900/8.0900# https://www.dwd.de/DWD/wetter/wv_spez/hobbymet/wetterkarten/bwk_bodendruck_na_ana.png";
+  LIST[9]="Z009_EUsat          EU-Satellit@12/48.1000/8.1000# https://eumetview.eumetsat.int/static-images/latestImages/EUMETSAT_MSG_RGBNatColourEnhncd_CentralEurope.jpg";
+ LIST[10]="Z010_Trend            DWD-Trend@12/48.0500/8.0500# https://www.dwd.de/DWD/wetter/wv_allg/deutschland_trend/bilder/ecmwf_meg_10738.png";
+ LIST[11]="Z011_Iznang              Iznang@14/47.7155/8.9605# http://wetterstationen.meteomedia.de/messnetz/vorhersagegrafik/109270.png";
+ LIST[12]="Z012_HoPeisb    Hohenpeißenberg@14/47.8011/11.012# https://www.foto-webcam.eu/webcam/peissenberg/current/1920.jpg";
+ LIST[13]="Z013_HoPei-W    Hohenpeißenberg@14/47.8011/11.013# https://wetter-peissenberg.de/jpg_verkleinern.php?datname=hoehendaten/webcam_hp_w.jpg";
+ LIST[14]="Z014_HoPeis-S   Hohenpeißenberg@14/47.8011/11.015# https://wetter-peissenberg.de/jpg_verkleinern.php?datname=hoehendaten/webcam_hp_s.jpg";
+ LIST[15]="Z015_HoPeis-O   Hohenpeißenberg@14/47.8011/11.017# https://wetter-peissenberg.de/jpg_verkleinern.php?datname=hoehendaten/webcam_hp_o.jpg";
+ LIST[16]="Z016_ZugSptz1         Zugspitze@14/47.4196/10.977# https://www.foto-webcam.eu/webcam/zugspitze/current/1920.jpg";
+ LIST[17]="Z017_ZugSptz2         Zugspitze@14/47.4196/10.977# https://www.foto-webcam.eu/webcam/zugspitze-sued/current/1920.jpg";
+ LIST[18]="Z018_Schleswg         Schleswig@14/54.5117/9.5704# https://www.stadtwerke-sh.de/extern/webcam/hafen_SL.jpg";
+ LIST[19]="Z019_FlensBrg         Flensburg@14/54.7885/9.4301# https://www.foto-webcam.eu/webcam/flensburg/current/1920.jpg";
+ LIST[20]="Z020_Pad-Haxt         Paderborn@14/51.6883/8.7756# https://cam.afu-server.de/Paderborn-CAM1.jpg";
+ LIST[21]="Z021_Pad-Haxt        Haxtenberg@14/51.6883/8.7756# https://cam.afu-server.de/Paderborn-CAM2.jpg";
+ LIST[22]="Z022_GrFldBrg      Großfeldberg@14/50.2335/8.4583# https://www.foto-webcam.eu/webcam/feldberg-ts/current/1920.jpg";
+ LIST[23]="Z023_Stu-Turm         Stuttgart@13/48.7523/9.1954# https://www.fernsehturm-stuttgart.de/webcam/current2.jpg";
+ LIST[24]="Z024_HochBlau        Hochblauen@13/47.7770/7.7011# https://www.foto-webcam.eu/webcam/hochblauen/current/1200.jpg";
+ LIST[25]="Z025_GersBach          Gersbach@14/47.6944/7.9290# http://www.schopfheim.de/webcam/gersbach/video.jpg";
+ LIST[26]="Z026_RicknBac        Rickenbach@14/47.6333/7.9800# http://www.ziis.de/cam/current.jpg";
+ LIST[27]="Z027_RicknB-W        Rickenbach@14/47.6333/7.9800# http://www.ziis.de/cam/current_WE.jpg";
+ LIST[28]="Z028_Bremgart        Bremgarten@14/47.9030/7.6170# https://webcam-gewerbepark.ftp-land-in-sicht.de/snap_c1.jpg";
+ LIST[29]="Z029_RehBach     StBlas-Rehbach@12/47.8125/8.0688# https://webcam.hirsch-woelfl.de/stblasien/webcam/rehbach.jpg";
+ LIST[30]="Z030_BaarFlug          BaarFlug@12/47.8901/8.5611# https://baar-flieger.de/webcams/sued_current.php";
+ LIST[31]="Z031_TdnBerg         Todnauberg@13/47.8525/7.9416# https://chalet-foret.de/webcam/bild_klein.jpg";
+ LIST[32]="Z032_Todtnau             Todnau@12/47.8298/7.9440# https://webcam.datacreate.de/hasenhorn/webcam-hasenhorn.jpg";
+ LIST[33]="Z033_Schwaerz    Schwaerzenbach@14/47.9490/8.2334# https://www.cafe-feldbergblick.de/webcam.jpg";
+ LIST[34]="Z034_GrafMatt        Grafenmatt@14/47.8472/8.0216# https://webcam.hirsch-woelfl.de/stblasien/webcam/grafenmatt.jpg";
+ LIST[35]="Z035_FeldBrg1          Feldberg@14/47.8690/8.0187# https://www.gloecklehof.de/php_lib/tools/webcam_wrapper.php?curcam=3&fl=5770609";
+ LIST[36]="Z036_FldB-Hof      Feldberg-Hof@12/47.8604/8.0364# https://www.feldberger-hof.de/static/webcam/fh-dach1280.jpg";
+ LIST[37]="Z037_ZellrLift      ZellerLift1@12/47.8520/8.0350# https://skiclub-zell.lima-city.de/live.jpg";
+ LIST[38]="Z038_FBZeiger        Zeigerbahn@12/47.8541/8.0330# https://webcam.hirsch-woelfl.de/stblasien/webcam/zeigerbahn.jpg?";
+ LIST[39]="Z039_SchwarzB     Schwarzenbach@12/47.8537/8.1085# https://webcams.ftp-land-in-sicht.de/feldberg/webcam-schwarzenbachlift-talstation.jpg";
+ LIST[40]="Z040_TdnHuett    TodnauerHuette@14/47.8666/7.9998# https://www.webcam.feldberg-loipen.de/webcam.jpg";
+ LIST[41]="Z041_FahlBerg   Fahl u.Feldberg@14/47.8528/7.9930# https://webcam.datacreate.de/feldbergblick/webcam-feldbergblick.jpg";
+ LIST[42]="Z042_Fahl-Fbg        FeldB-Fahl@12/47.5059/7.9960# https://liftverbund-static.ftp-land-in-sicht.de/webcam/webcam1.jpg";
+ LIST[43]="Z043_HofsGr           Hofsgrund@12/47.9004/7.8998# https://regiowebcam.de/fileadmin/galerie/gallery_l_hofsgrund_schauinslandmassiv.jpg";
+ LIST[44]="Z044_StolBa         Zastler-Tal@12/47.8984/7.9796# https://www.skilifte-stollenbach.de/de/webcam/clips/cam.php?file=cam10_-45_.jpg&size=large&fl=1731231295";
+ LIST[45]="Z045_MPI-1             FR-Wiere@15/47.9812/7.8488# https://mpi-freiburg.de/live/live_left.jpg";
+ LIST[46]="Z046_Univ-FRb            FR-Uni@15/48.0015/7.8493# https://weather.uni-freiburg.de/img/current_city.jpg";
+ LIST[47]="Z047_LahrFwtm              Lahr@15/48.3379/7.8732# https://www.lahr.de/webcam/lahr-feuerwehrturm.jpg";
+ LIST[48]="Z048_Breisach          Breisach@15/48.0280/7.5835# https://www.breisach.de/images/webcam/current.jpg?ver=1731183412773";
+ LIST[49]="Z049_Yutube              Yutube@12/48.1336/7.8655# https://www.youtube.com/@FedorBalanovitch/videos";
+ LIST[50]="Z050_WebLogin          WebLogin@12/48.1336/7.8625# https://www.web.de";
+ LIST[51]="Z051_EichS       Eichbergturm-S@12/48.1336/7.8685# http://www.eichbergturm.de/webcam/webcam_s/webcam_s.jpg";
+ LIST[52]="Z052_StMaergn         StMaergen@15/48.0064/8.0999# https://regiowebcam.de/fileadmin/user_upload/partner/regiowebcam_stmaergen.jpg";
+ LIST[53]="Z053_StPeter            StPeter@15/48.0187/8.0286# http://webcam-stpeter.zweihochdrei.ch/webcam.jpg";
+ LIST[54]="Z054_Staufen        Muenstertal@15/47.8635/7.8030# https://webcams.ftp-land-in-sicht.de/staufen/klostersttrudpert.jpg";
+ LIST[55]="Z055_BolSchwl       Bollschweil@14/47.9082/7.8396# https://www.bollschweil.de/tools/webcam/index.php5?image=image.jpg";
+ LIST[56]="Z056_Gutach           Gutach/FR@12/48.1203/7.9976# https://gutach.it-wms.com/current1.jpg";
+ LIST[57]="Z057_SomRain         Sommerrain@15/48.1585/8.0986# https://www.elztal-wetter-data.de/WebcamSR/image.jpg";
+ LIST[58]="Z058_RauGrnd       Rauchengrund@15/48.1374/8.0929# http://www.elztal-wetter-data.de/WebcamRG/image.jpg";
+ LIST[59]="Z059_Schoenw         Schoenwald@15/48.1025/8.1942# https://www.schoenwald.net/webcam/schanze/schoenwaldm.jpg";
+ LIST[60]="Z060_Triberg            Triberg@15/48.1260/8.2263# http://www.triberg.de/webcamPic/webcam.jpg";
+ LIST[61]="Z061_FreudStd      Freudenstadt@14/48.4646/8.4108# https://www.freudenstadt.de/tools/webcams/oberer_Marktplatz/halfsize.jpg";
+ LIST[62]="Z062_SchliffK       Schliffkopf@14/48.5337/8.2184# https://hotel-schliffkopf.viomassl.com/static/webcam/schliffkopf320.jpg";
+ LIST[63]="Z063_GrindHut     Grindenhuette@15/48.6033/8.2015# https://www.grindehuette.de/webcam-grindehuette-rheinebene.jpg";
+ LIST[64]="Z064_GrindenH     Grindenhuette@12/48.6011/8.2002# https://www.grindehuette.de/webcam-grindehuette.jpg";
+ LIST[65]="Z065_Onstmet1     Onstmettingen@13/48.3041/8.9929# https://arig-mn.org/cams/cam1-rab_TIMING.jpg";
+ LIST[66]="Z066_Onstmet2      Onstmetingen@14/48.3041/8.9929# https://arig-mn.org/cams/cam2-rab_TIMING.jpg";
+ LIST[67]="Z067_BuchKopf          Buchkopf@14/48.4767/8.2025# https://www.foto-webcam.eu/webcam/buchkopfturm/current/1200.jpg";
+ LIST[68]="Z068_Loffenau1       Startplatz@14/48.7565/8.4074# https://images-webcams.windy.com/69/1526378969/current/full/1526378969.jpg";
+ LIST[69]="Z069_Loffenau2     Teufelsmühle@12/48.7582/8.4060# https://teufelscam.dyndns.org/cam2/latest/latest.jpg";
+ LIST[70]="Z070_Schonach          Schonach@15/48.1522/8.1994# https://www.schonach.de/schonach/webcam/webcam.jpg";
+ LIST[71]="Z071_Flueh                Flueh@13/47.4653/7.4486# http://www.leimentalerwetter.ch/meteo/current.jpg"; 
+ LIST[72]="Z072_LudwHafn      Ludwigshafen@14/47.8141/9.0550# https://www.bodman-ludwigshafen.de/assets/Tools/imgResizer/1.jpg";
+ LIST[73]="Z073_Radolfz1        Radolfzell@14/47.7354/8.9696# http://www.wwrad.de/hafenkamera.jpg";
+ LIST[74]="Z074_Radolfz2        Radolfzell@14/47.7375/8.9615# https://ycra.leirer.de/video000.jpg";
+ LIST[75]="Z075_Ueberli1       Ueberlingen@14/47.7593/9.1746# https://admin.meteobridge.com/cam/1040d3d2361b6226a7e380fb1f936d87/camplus.jpg";
+ LIST[76]="Z076_Ueberli2       Ueberlingen@14/47.7580/9.1810# https://www.smcue.de/fileadmin/99_Webcam/live_CAM1.jpg";
+ LIST[77]="Z077_Ueberli3    Ueberlingen-Ki@12/47.7699/9.1591# https://ueberlinger-ruderclub.de/assets/images/f/webcam_muensterturm_ueberlingen-k85t8hfth5jzen6.jpg";
+ LIST[78]="Z078_DonQuell       Donauquelle@14/47.9502/8.5168# https://www.terra-hd.de/donaueschingen2/img/current/1920.jpg";
+ LIST[79]="Z079_BadDuerr      BadDuerrheim@13/48.0210/8.5315# http://www.unwetterzentrale.de/images/webcams/badduerrheiml1.jpg";
+ LIST[80]="Z080_DonEsch     Donaueschingen@13/47.9519/8.4951# https://cam.afu-server.de/Donau-CAM1.jpg";
+ LIST[81]="Z081_Winzeln             Winzel@14/48.2783/8.4293# http://www.lsv-schwarzwald.de/webcam/webcam2/Camera-2.jpg";
+ LIST[82]="Z082_Winzel2       Winzeln-cam3@12/48.2806/8.4272# http://www.lsv-schwarzwald.de/webcam/webcam3/Camera-3.jpg";
+ LIST[83]="Z083_EDTS1                 EDTS@13/48.0647/8.5699# https://cam.afu-server.de/Schwenningen-CAM1.jpg";
+ LIST[84]="Z084_EDTS2                 EDTS@14/48.0647/8.5699# https://cam.afu-server.de/Schwenningen-CAM2.jpg";
+ LIST[85]="Z085_KlipnEk1        Klippeneck@13/48.1077/8.7570# https://cam.afu-server.de/Klippeneck-CAM1.jpg";
+ LIST[86]="Z086_KlipnEk2        Klippeneck@14/48.1079/8.7600# https://cam.afu-server.de/Klippeneck-CAM2.jpg";
+ LIST[87]="Z087_KlipnEk3        Klippeneck@14/48.1082/8.7630# https://cam.afu-server.de/Klippeneck-CAM3.jpg";
+ LIST[88]="Z088_KlipnEk4        Klippeneck@13/48.1083/8.7660# https://cam.afu-server.de/Klippeneck-CAM4.jpg";
+ LIST[89]="Z089_ZepfHhn1        Zepfenhahn@14/48.1875/8.7186# https://cam.afu-server.de/Zepfenhan-CAM1.jpg";
+ LIST[90]="Z090_ZepfHhn2        Zepfenhahn@14/48.1875/8.7186# https://cam.afu-server.de/Zepfenhan-CAM2.jpg";
+ LIST[91]="Z091_Balingen          Balingen@12/48.2867/8.8468# https://scheible.it/webcam/webcam-stadt-balingen.jpg";
+ LIST[92]="Z092_Laiching        Laichingen@13/48.4964/9.6559# http://www.jakob-laur-flugplatz.de/cam1/cam1.jpg";
+ LIST[93]="Z093_Neuhausn         Neuhausen@14/47.9769/8.9143# https://www.take-off-park.de/wp-content/uploads/webcam/tower1.jpg";
+ LIST[94]="Z094_Spaichng       Spaichingen@13/48.0729/8.7433# http://sp.itatbusiness.de/BilderKameraNeu/aktuell/live.jpg";
+ LIST[95]="Z095_Witthoh            Witthoh@15/47.9359/8.8271# https://www.witthoh-gasthof.de/webcam/live2.jpg";
+ LIST[96]="Z096_Tuttlingn       Tuttlingen@13/47.9846/8.8184# https://images-webcams.windy.com/66/1274188366/current/original/1274188366.jpg";
+ LIST[97]="Z097_Hchwng1     Hoechenschwand@14/47.7330/8.1666# https://webcam-hoehenschwand.gerda-hirsch-woelfl.de/hoechenschwand.php";
+ LIST[98]="Z098_Hchwng2     Hoechenschwand@14/47.7330/8.1666# https://webcam-hoehenschwand.gerda-hirsch-woelfl.de/haeusern.php";
+ LIST[99]="Z099_Hchwng3     Hoechenschwand@14/47.7330/8.1666# https://webcam-hoehenschwand.gerda-hirsch-woelfl.de/feldberg.php";
+LIST[100]="Z100_FeldBrg2          Feldberg@13/47.8690/8.0187# http://webcam.land-in-sicht.com/feldberg/webcam-seebuck640.jpg";
+LIST[101]="Z101_FeldBrg3          Feldberg@14/47.8690/8.0187# http://webcam.land-in-sicht.com/feldberg/webcam-feldberg640.jpg";
+LIST[102]="Z102_Belchen1           Belchen@14/47.8221/7.8345# http://Belchen.it-wms.com/panorama1_raw.jpg";
+LIST[103]="Z103_Belchen2           Belchen@14/47.8221/7.8315# http://www.alte.Belchen-seilbahn.de/webcam/rechts.jpg";
+LIST[104]="Z104_Waldau              Waldau@13/47.9819/8.1650# http://www.schneeberg-waldau.de/webcam.jpg";
+LIST[105]="Z105_Hochberg          Hochberg@14/47.9762/8.1954# http://neba38.ddns3-instar.de:8060/tmpfs/snap.jpg?-usr=engel&-pwd=hochberg";
+LIST[106]="Z106_Binningen        Binningen@14/47.7968/8.7114# http://www.sfg-binningen.de/Webcam/7J08F2DPAZ6BE4D/Snapshot/Snapshot.jpg";
+LIST[107]="Z107_Salem                Salem@14/47.7739/9.2922# http://salem-baden.de.www217.your-server.de/schlosssee.jpg";
+LIST[108]="Z108_HeilBerg      Heiligenberg@14/47.8178/9.3118# https://www.heiligenberg.de/data/cam.htm";
+LIST[109]="Z109_Gottenhm        Gottenheim@15/48.0492/7.7280# http://85.220.149.7/cgi-bin/guestimage.html";
+LIST[110]="Z110_LenzK            Lenzkirch@12/47.8697/8.2012# https://netvk.de/Wetter/snap/kappel.jpg";
+LIST[111]="Z111_StBlas           StBlasien@12/47.7591/8.1277# https://webcam.hirsch-woelfl.de/stblasien/webcam/sparkasse.jpg";
+LIST[112]="Z112_Todtmoos    Todtmoos-Roess@12/47.7396/8.0007# https://www.todtmoos.info/roessle/2.jpg";
+LIST[113]="Z113_Todm-Hrw     Herrenschwand@12/47.7684/7.9533# https://portal.ipvcloud.com/live/107/live.jpg?mode=live&guest=cu47660fc1matp415r6hmft5uwg1n12w";
+LIST[114]="Z114_Todb-Ws1   Todnbg-WasnLft1@12/47.8611/7.9584# https://www.gloecklehof.de/cam/cam.jpg?fl=1731232591";
+LIST[115]="Z115_Todb-Ws2   Todnbg-WasnLft2@12/47.8611/7.9584# http://www.gloecklehof.de/cam/cam.jpg";
+LIST[116]="Z116_Todb-Kel   Todnbg-H.Keller@12/47.8529/7.9509# https://www.haus-keller.de/webcam/kellercam.jpg";
+LIST[117]="Z117_Todb-Bck   Todnbg-Bucklift@12/47.8488/7.9340# https://www.bucklift-todtnauberg.de/webcam/bucklift640.jpg";
+LIST[118]="Z118_Kandel-L      Kandel-Lifte@12/48.0627/8.0182# https://kandellifte.de/bilder/video.jpg";
+LIST[119]="Z119_RuhStein        Ruehestein@15/48.5614/8.2212# https://www.skilift-ruhestein.de/pics/pics/webcam.jpg";
+LIST[120]="Z120_Seibseck        Seibelseck@14/48.5962/8.2174# https://webcam.auerhahn-onlineshop.de/webcam/seibelseckle-webcam-lift.jpg";
+LIST[121]="Z121_Buhlbach          Buhlbach@14/48.5251/8.2615# https://webcam.itteleservice.de/webcams/baiersbronn-webcam/Skihuette_Obertal/webcambbtouri.jpg";
+LIST[122]="Z122_HldnKopf1   Haldenkoepfle1@12/47.8854/7.8950# https://www.skilifte-haldenkoepfle.de/webcam/Haldenkoepfle1-Day.jpg";
+LIST[123]="Z123_HldnKopf2   Haldenkoepfle2@12/47.8854/7.8950# https://www.skilifte-haldenkoepfle.de/webcam/Haldenkoepfle2-Day.jpg";
+LIST[124]="Z124_Pfaender1         Pfaender@14/47.5059/9.7792# http://pfaenderbahn.it-wms.com/panorama1_raw.jpg";
+LIST[125]="Z125_Pfaender2         Pfaender@12/47.5087/9.7781# https://webtv.feratel.com/webtv/?design=v5&cam=5805";
+LIST[126]="Z126_RhSchlcht    Rheinschlucht@14/46.8136/9.3475# https://www.foto-webcam.eu/webcam/rheinschlucht/current/1920.jpg";
+LIST[127]="X127_Ravensbg        Ravensburg@12/47.7803/9.6112# pmaxthumbnail.htm";     
+LIST[128]="Z128_Ueberlin       Ueberlingen@14/47.7593/9.1746# https://webtv.feratel.com/webtv/?design=v5&#038;cam=3111";
+LIST[129]="Z129_Konstanz          Konstanz@12/47.6651/9.1776# https://webtv.feratel.com/webtv/?design=v5&#038;cam=3207";
+LIST[130]="Z130_Loerrach          Loerrach@12/47.6149/7.6671# https://webtv.feratel.com/webtv/?design=v5&#038;cam=3381";
+LIST[131]="Z131_Basel                Basel@12/47.5604/7.5877# https://webtv.feratel.com/webtv/?design=v5&#038;cam=4175";
+LIST[132]="Z132_Wildberg          Wildberg@12/48.6231/8.7406# https://webtv.feratel.com/webtv/?design=v5&#038;cam=3320";
+LIST[133]="Z133_Herrnalb         Herrenalb@12/48.8026/8.4385# https://webtv.feratel.com/webtv/?design=v5&#038;cam=3230";
+LIST[134]="Z134_Koblenz            Koblenz@12/50.3698/7.6111# https://webtv.feratel.com/webtv/?design=v5&#038;cam=3300";
+LIST[135]="Z135_Passau              Passau@12/48.5800/13.465# https://webtv.feratel.com/webtv/?design=v5&#038;cam=3365";
+LIST[136]="Z136_Beuren              Beuren@12/48.5507/9.3723# https://webtv.feratel.com/webtv/?design=v5&#038;cam=3215";
+LIST[137]="Z137_Teinach            Teinach@12/48.6903/8.6882# https://webtv.feratel.com/webtv/?design=v5&#038;cam=3232";
+LIST[138]="Z138_Hayingen          Hayingen@12/48.2712/9.4672# https://webtv.feratel.com/webtv/?design=v5&#038;cam=3290";
+LIST[139]="Z139_Muensing        Muensingen@12/48.4004/9.4744# https://webtv.feratel.com/webtv/?design=v5&#038;cam=3210";
+LIST[140]="Z140_Muenchn           Muenchen@12/48.1326/11.584# https://webtv.feratel.com/webtv/?design=v5&#038;cam=3015";
+LIST[141]="Z141_Nuernber         Nuernberg@12/49.4520/11.077# https://webtv.feratel.com/webtv/?design=v5&#038;cam=3020";
+LIST[142]="Z142_NeuSchw     Neuschwanstein@12/47.5575/10.750# https://webtv.feratel.com/webtv/?design=v5&#038;cam=3028"; 
+LIST[143]="Z143_OberWesl         Oberwesel@12/50.1005/7.7353# https://webtv.feratel.com/webtv/?design=v5&#038;cam=3302"; 
+LIST[144]="Z144_Donauwoe       Donauwoerth@12/48.6968/10.770# https://webtv.feratel.com/webtv/?design=v5&#038;cam=3400"; 
+LIST[145]="Z145_Hamburg            Hamburg@12/53.5341/9.9381# https://webtv.feratel.com/webtv/?design=v5&#038;cam=3325";
+LIST[146]="Z146_Emden                Emden@12/53.3411/7.1998# https://webtv.feratel.com/webtv/?design=v5&#038;cam=3255";
+LIST[147]="Z147_WangeRo         Wangerooge@12/53.7846/7.9158# https://webtv.feratel.com/webtv/?design=v5&#038;cam=3250";
+LIST[148]="Z148_FederWar  Fedderwardersiel@12/53.6000/8.3561# https://webtv.feratel.com/webtv/?design=v5&#038;cam=3268";
+LIST[149]="Z149_Norddch          Norddeich@12/53.6126/7.1633# https://webtv.feratel.com/webtv/?design=v5&#038;cam=43012";
+LIST[150]="Z150_Saarburg          Saarburg@12/49.6053/6.5543# https://webtv.feratel.com/webtv/?design=v5&#038;cam=3315";
+LIST[151]="Z151_Nittel              Nittel@12/49.6528/6.4378# https://webtv.feratel.com/webtv/?design=v5&#038;cam=3316";
+LIST[152]="Z152_Kell                  Kell@12/49.6286/6.8206# https://webtv.feratel.com/webtv/?design=v5&#038;cam=3317";
+LIST[153]="Z153_Genf                  Genf@12/46.2043/6.1539# https://webtv.feratel.com/webtv/?design=v5&#038;cam=4145";
+LIST[154]="Z154_Luzern              Luzern@12/47.0552/8.2873# https://webtv.feratel.com/webtv/?design=v5&#038;cam=4096";
+LIST[155]="Z155_Lech-Zuers      Lech-Zuers@12/47.1709/10.163# https://webtv.feratel.com/webtv/?design=v5&cam=5810";
+LIST[156]="Z156_Stuben1            Stuben1@12/47.1400/10.150# https://www.foto-webcam.eu/webcam/stuben/current/720.jpg";
+LIST[157]="Z157_Stuben2            Stuben2@12/47.1380/10.170# https://webtv.feratel.com/webtv/?design=v5&cam=5840";
+LIST[158]="Z158_Prag                  Prag@12/50.0561/14.420# https://webtv.feratel.com/webtv/?design=v5&cam=2127";
+LIST[159]="Z159_Chleb                Chleb@12/49.1986/19.052# https://webtv.feratel.com/webtv/?design=v5&cam=1017";
+LIST[160]="Z160_Wien-ORF       Kueniglberg@12/48.1775/16.291# https://webtv.feratel.com/webtv/?design=v5&cam=8000000";
+LIST[161]="Z161_Wien-Rath        Wien-Rath@12/48.2103/16.362# https://webtv.feratel.com/webtv/?design=v5&cam=5970";
+LIST[162]="Z162_Hockhorn        Hockenhorn@12/46.4308/7.7472# https://webtv.feratel.com/webtv/?design=v5&cam=4219";
+LIST[163]="Z163_Pontresin       Pontresina@12/46.4910/9.9028# https://webtv.feratel.com/webtv/?design=v5&cam=4212";
+LIST[164]="Z164_Rom                    Rom@12/41.8983/12.454# https://webtv.feratel.com/webtv/?design=v5&cam=6035";
+LIST[165]="Z165_Garda                Garda@12/45.5501/10.717# https://webtv.feratel.com/webtv/?design=v5&cam=6410";
+LIST[166]="Z166_Dilsen              Dilsen@12/51.0253/5.7485# https://webtv.feratel.com/webtv/?design=v5&cam=8020";
+LIST[167]="Z167_Beringn-A     Beringen-Aqu@12/51.0700/5.2190# https://webtv.feratel.com/webtv/?design=v5&cam=8080";
+LIST[168]="Z168_Beringen          Beringen@12/51.0719/5.2222# https://webtv.feratel.com/webtv/?design=v5&cam=8081";
+LIST[169]="Z169_DeHaan              DeHaan@12/51.2780/3.0293# https://webtv.feratel.com/webtv/?design=v5&cam=8010";
+LIST[170]="Z170_Zeebrugg         Zeebrugge@12/51.3290/3.1781# https://webtv.feratel.com/webtv/?design=v5&cam=8037";
+LIST[171]="Z171_Koeln                Koeln@12/50.9404/6.9699# https://webtv.feratel.com/webtv/?design=v5&cam=3275";
+LIST[172]="Z172_Berlin              Berlin@12/52.5160/13.379# https://webtv.feratel.com/webtv/?design=v5&cam=3385";
+LIST[173]="Z173_Neuburg         Neuburg-Do@12/48.7116/11.216# https://webtv.feratel.com/webtv/?design=v5&cam=3355";
+LIST[174]="Z174_Oberstdrf       Oberstdorf@12/47.4045/10.295# https://webtv.feratel.com/webtv/?design=v5&cam=3053";
+LIST[175]="Z175_Gruenten          Gruenten@12/47.5516/10.310# https://webtv.feratel.com/webtv/?design=v5&cam=3049";
+LIST[176]="Z176_Ruedeshm        Ruedesheim@12/49.9806/7.9159# https://webtv.feratel.com/webtv/?design=v5&cam=3360";
+LIST[177]="Z177_StPeter-O     Peter-Ording@12/54.3131/8.5944# https://webtv.feratel.com/webtv/?design=v5&cam=3241";
+LIST[178]="Z178_Sylt                  Sylt@12/54.9095/8.2988# https://webtv.feratel.com/webtv/?design=v5&cam=3420";
+LIST[179]="Z179_Reichenhl      Reichenhall@12/47.6912/12.884# https://webtv.feratel.com/webtv/?design=v5&cam=3180";
+LIST[180]="Z180_Worms                Worms@12/49.6338/8.3447# https://webtv.feratel.com/webtv/?design=v5&cam=3305";
+LIST[181]="Z181_Wuerzbrg         Wuerzburg@12/49.6290/8.3581# https://webtv.feratel.com/webtv/?design=v5&cam=3068";
+LIST[182]="Z182_Lenggries        Lenggries@12/47.6632/11.526# https://webtv.feratel.com/webtv/?design=v5&cam=3165";
+LIST[183]="Z183_Dresden            Dresden@12/51.0534/13.743# https://webtv.feratel.com/webtv/?design=v5&cam=3388";
+LIST[184]="Z184_Tasiilaq          Tasiilaq@12/65.6186/-37.63# https://webtv.feratel.com/webtv/?design=v5&cam=19010";
+LIST[185]="Z185_Binz                  Binz@12/48.0000/8.0000# https://webtv.feratel.com/webtv/?design=v5&cam=3156";
+LIST[186]="Z186_Muensing          Muensing@12/48.0000/8.0000# https://webtv.feratel.com/webtv/?design=v5&cam=3172";
+LIST[187]="Z187_Kochel              Kochel@12/48.0000/8.0000# https://webtv.feratel.com/webtv/?design=v5&cam=3170";
+LIST[188]="Z188_Wackersberg    Wackersberg@12/48.0000/8.0000# https://webtv.feratel.com/webtv/?design=v5&cam=3160";
+LIST[189]="Z189_Radebeul          Radebeul@12/48.0000/8.0000# https://webtv.feratel.com/webtv/?design=v5&cam=3387";
+LIST[190]="Z190_Mergenthm      Mergentheim@12/48.0000/8.0000# https://webtv.feratel.com/webtv/?design=v5&cam=3216";
+LIST[191]="Z191_Hof-AirPo         HofAirPo@12/48.0000/8.0000# https://webtv.feratel.com/webtv/?design=v5&cam=3073";
+LIST[192]="Z192_Thale                Thale@12/48.0000/8.0000# https://webtv.feratel.com/webtv/?design=v5&cam=3062";
+LIST[193]="Z193_Waldkirchn     Waldkirchen@12/48.0000/8.0000# https://webtv.feratel.com/webtv/?design=v5&cam=3033";
+LIST[194]="Z194_Fichtelgeb   Fichtelgebirg@12/48.0000/8.0000# https://webtv.feratel.com/webtv/?design=v5&cam=3102";
+LIST[195]="Z195_Hardt                Hardt@12/48.1835/8.4089# https://www.hardt-online.de/tools/webcamPreview/webcam.php";
+
+//-------------------------------------------------------------------------------------------------------------------------
+// (0) INIT()
+//-------------------------------------------------------------------------------------------------------------------------
+function INIT(){first=offset+1;last=offset+47;  
+                RST();L001();
+                document.getElementById("FRST").value=first;
+                document.getElementById("OFFS").value=last;
+                document.getElementById("FRST").style.backgroundColor="aqua";
+                document.getElementById("OFFS").style.backgroundColor="aqua";                
+}
+function SCRD(){offset=offset+1;first=offset+1;
+                last=first+46;;if(last>=195){last=195;first=last-46;offset=offset-1};  
+                document.getElementById("FRST").value=first;
+                document.getElementById("OFFS").value=last;
+                RST();
+                document.getElementById("SCRD").style.backgroundColor="aqua";
+                document.getElementById("OFFS").style.backgroundColor="aqua";
+
+};
+function SCRU(){offset=offset-1;first=offset+1;
+                if(first<=0){first=1;offset=0};
+                last=first+46;  
+                document.getElementById("FRST").value=first;
+                document.getElementById("OFFS").value=last;
+                RST();
+                document.getElementById("SCRU").style.backgroundColor="aqua";
+                document.getElementById("FRST").style.backgroundColor="aqua";
+};
+//-----------------------------------------
+// (1) RESET BUTTONS
+//-----------------------------------------
+function LAB(h){return LIST[h].slice(5,15)};// slice(1,11)
+//-----------------------------------------
+function SETLAB(){
+var j = 1 ;
+var k = first ;
+while(j<=47){ idx=('000'+j.toString()).slice(-3);
+              idx='L'+idx;
+              document.getElementById(idx).value=LAB(k) ; 
+              document.getElementById(idx).style.backgroundColor="";
+              document.getElementById("ZOOM").style.backgroundColor="";
+              document.getElementById("ACTU").style.backgroundColor="";
+              document.getElementById("SCRU").style.backgroundColor="";
+              document.getElementById("FRST").style.backgroundColor="";
+              document.getElementById("SCRD").style.backgroundColor="";
+              document.getElementById("OFFS").style.backgroundColor="";
+              j = j + 1; k = k + 1;
+              document.getElementById(indx).style.backgroundColor="yellow";
+};//endwhile
+};
+//-----------------------------------------
+function RST(){SETLAB();
+}
+//-------------------------------------------------------------------------------------------------------------------------
+// (2) ZOOM-ZIP
+//-------------------------------------------------------------------------------------------------------------------------
+function ZOOM(){RST();zoom=-zoom;
+                if (zoom<=0) {document.getElementById("Bild").style.width="1080";
+                              document.getElementById("Bild").style.height="695px";
+                              document.getElementById("ZOOM").value="zip"}
+                        else {document.getElementById("Bild").style.width ="880px";
+                              document.getElementById("Bild").style.height="470px";
+                              document.getElementById("ZOOM").value="zoom"};
+                }
+//-------------------------------------------------------------------------------------------------------------------------
+// (3) MAIN DOUBLE-POP-FUNCTION
+//-------------------------------------------------------------------------------------------------------------------------
+function POP(k){pk=first + k ; 
+                indx=("000"+(k+1).toString()).slice(-3);
+                document.getElementById("ACTU").value=indx;indx="L"+indx;
+                document.getElementById(indx).style.backgroundColor="aqua";
+                lnk=LIST[pk].slice(LIST[pk].indexOf('#')+2-LIST[pk].length);
+                pop="<a href="+ lnk +" target='_blank' rel='noopener'><img src="+ lnk + " alt='RELOAD'></a>";document.getElementById("Bild").innerHTML=pop};
+//-------------------------------------------------------------------------------------------------------------------------
+// (4) RESPECTIVE LINK-BUTTON CALL-UP
+//-------------------------------------------------------------------------------------------------------------------------
+function L001(){RST();document.getElementById("L001").style.backgroundColor="aqua";POP(00)};
+function L002(){RST();document.getElementById("L002").style.backgroundColor="aqua";POP(01)};
+function L003(){RST();document.getElementById("L003").style.backgroundColor="aqua";POP(02)};
+function L004(){RST();document.getElementById("L004").style.backgroundColor="aqua";POP(03)};
+function L005(){RST();document.getElementById("L005").style.backgroundColor="aqua";POP(04)};
+function L006(){RST();document.getElementById("L006").style.backgroundColor="aqua";POP(05)};
+function L007(){RST();document.getElementById("L007").style.backgroundColor="aqua";POP(06)};
+function L008(){RST();document.getElementById("L008").style.backgroundColor="aqua";POP(07)};
+function L009(){RST();document.getElementById("L009").style.backgroundColor="aqua";POP(08)};
+function L010(){RST();document.getElementById("L010").style.backgroundColor="aqua";POP(09)};
+function L011(){RST();document.getElementById("L011").style.backgroundColor="aqua";POP(10)};
+function L012(){RST();document.getElementById("L012").style.backgroundColor="aqua";POP(11)};
+function L013(){RST();document.getElementById("L013").style.backgroundColor="aqua";POP(12)};
+function L014(){RST();document.getElementById("L014").style.backgroundColor="aqua";POP(13)};
+function L015(){RST();document.getElementById("L015").style.backgroundColor="aqua";POP(14)};
+function L016(){RST();document.getElementById("L016").style.backgroundColor="aqua";POP(15)};
+function L017(){RST();document.getElementById("L017").style.backgroundColor="aqua";POP(16)};
+function L018(){RST();document.getElementById("L018").style.backgroundColor="aqua";POP(17)};
+function L019(){RST();document.getElementById("L019").style.backgroundColor="aqua";POP(18)};
+function L020(){RST();document.getElementById("L020").style.backgroundColor="aqua";POP(19)};
+function L021(){RST();document.getElementById("L021").style.backgroundColor="aqua";POP(20)};
+function L022(){RST();document.getElementById("L022").style.backgroundColor="aqua";POP(21)};
+function L023(){RST();document.getElementById("L023").style.backgroundColor="aqua";POP(22)};
+function L024(){RST();document.getElementById("L024").style.backgroundColor="aqua";POP(23)};
+function L025(){RST();document.getElementById("L025").style.backgroundColor="aqua";POP(24)};
+function L026(){RST();document.getElementById("L026").style.backgroundColor="aqua";POP(25)};
+function L027(){RST();document.getElementById("L027").style.backgroundColor="aqua";POP(26)};
+function L028(){RST();document.getElementById("L028").style.backgroundColor="aqua";POP(27)};
+function L029(){RST();document.getElementById("L029").style.backgroundColor="aqua";POP(28)};
+function L030(){RST();document.getElementById("L030").style.backgroundColor="aqua";POP(29)};
+function L031(){RST();document.getElementById("L031").style.backgroundColor="aqua";POP(30)};
+function L032(){RST();document.getElementById("L032").style.backgroundColor="aqua";POP(31)};
+function L033(){RST();document.getElementById("L033").style.backgroundColor="aqua";POP(32)};
+function L034(){RST();document.getElementById("L034").style.backgroundColor="aqua";POP(33)};
+function L035(){RST();document.getElementById("L035").style.backgroundColor="aqua";POP(34)};
+function L036(){RST();document.getElementById("L036").style.backgroundColor="aqua";POP(35)};
+function L037(){RST();document.getElementById("L037").style.backgroundColor="aqua";POP(36)};
+function L038(){RST();document.getElementById("L038").style.backgroundColor="aqua";POP(37)};
+function L039(){RST();document.getElementById("L039").style.backgroundColor="aqua";POP(38)};
+function L040(){RST();document.getElementById("L040").style.backgroundColor="aqua";POP(39)};
+function L041(){RST();document.getElementById("L041").style.backgroundColor="aqua";POP(40)};
+function L042(){RST();document.getElementById("L042").style.backgroundColor="aqua";POP(41)};
+function L043(){RST();document.getElementById("L043").style.backgroundColor="aqua";POP(42)};
+function L044(){RST();document.getElementById("L044").style.backgroundColor="aqua";POP(43)};
+function L045(){RST();document.getElementById("L045").style.backgroundColor="aqua";POP(44)};
+function L046(){RST();document.getElementById("L046").style.backgroundColor="aqua";POP(45)};
+function L047(){RST();document.getElementById("L047").style.backgroundColor="aqua";POP(46)};
+//-------------------------------------------------------------------------------------------------------------------------
+// (5) EndOfJavaScript
+//-------------------------------------------------------------------------------------------------------------------------
+</script>
+<body onload="INIT()">
+<center>
+<div>
+<table><tr>
+<td>
+<table>
+<tr><td><input id="ZOOM" value="zoom" onClick="ZOOM()" type="button" style="height:24px;width:42px">
+        <input id="ACTU" value="actu" onClick="ACTU()" type="button" style="height:24px;width:32px"></td></tr>
+<tr><td><input id="SCRU" value="less" onClick="SCRU()" type="button" style="height:24px;width:42px">
+        <input id="FRST" value="from" onClick="OFFS()" type="button" style="height:24px;width:32px"></td></tr>
+<tr><td><input id="SCRD" value="more" onClick="SCRD()" type="button" style="height:24px;width:42px">
+        <input id="OFFS" value=" to " onClick="OFFS()" type="button" style="height:24px;width:32px"></td></tr>
+
+
+<tr><td><input id="L001" value="L001" onClick="L001()" type="button" style="height:24px;width:80px"></td></tr>
+<tr><td><input id="L002" value="L002" onClick="L002()" type="button" style="height:24px;width:80px"></td></tr>
+<tr><td><input id="L003" value="L003" onClick="L003()" type="button" style="height:24px;width:80px"></td></tr>
+<tr><td><input id="L004" value="L004" onClick="L004()" type="button" style="height:24px;width:80px"></td></tr>
+<tr><td><input id="L005" value="L005" onClick="L005()" type="button" style="height:24px;width:80px"></td></tr>
+<tr><td><input id="L006" value="L006" onClick="L006()" type="button" style="height:24px;width:80px"></td></tr>
+<tr><td><input id="L007" value="L007" onClick="L007()" type="button" style="height:24px;width:80px"></td></tr>
+<tr><td><input id="L008" value="L008" onClick="L008()" type="button" style="height:24px;width:80px"></td></tr>
+<tr><td><input id="L009" value="L009" onClick="L009()" type="button" style="height:24px;width:80px"></td></tr>
+<tr><td><input id="L010" value="L010" onClick="L010()" type="button" style="height:24px;width:80px"></td></tr>
+<tr><td><input id="L011" value="L011" onClick="L011()" type="button" style="height:24px;width:80px"></td></tr>
+<tr><td><input id="L012" value="L012" onClick="L012()" type="button" style="height:24px;width:80px"></td></tr>
+<tr><td><input id="L013" value="L013" onClick="L013()" type="button" style="height:24px;width:80px"></td></tr>
+<tr><td><input id="L014" value="L014" onClick="L014()" type="button" style="height:24px;width:80px"></td></tr>
+</table>
+</td><td><div id="Bild" style="height:470px;width:880px"></div></td>
+</tr>
+</table>
+<table>
+<tr>
+<td><input id="L015" value="L015" onClick="L015()" type="button" style="height:22px;width:80px"></td><td></td>
+<td><input id="L016" value="L016" onClick="L016()" type="button" style="height:22px;width:80px"></td><td></td>
+<td><input id="L017" value="L017" onClick="L017()" type="button" style="height:22px;width:80px"></td><td></td>
+<td><input id="L018" value="L018" onClick="L018()" type="button" style="height:22px;width:80px"></td><td></td>
+<td><input id="L019" value="L019" onClick="L019()" type="button" style="height:22px;width:80px"></td><td></td>
+<td><input id="L020" value="L020" onClick="L020()" type="button" style="height:22px;width:80px"></td><td></td>
+<td><input id="L021" value="L021" onClick="L021()" type="button" style="height:22px;width:80px"></td><td></td>
+<td><input id="L022" value="L022" onClick="L022()" type="button" style="height:22px;width:80px"></td><td></td>
+<td><input id="L023" value="L023" onClick="L023()" type="button" style="height:22px;width:80px"></td><td></td>
+<td><input id="L024" value="L024" onClick="L024()" type="button" style="height:22px;width:80px"></td><td></td>
+<td><input id="L025" value="L025" onClick="L025()" type="button" style="height:22px;width:80px"></td><td></td>
+</tr><tr>
+<td><input id="L026" value="L026" onClick="L026()" type="button" style="height:22px;width:80px"></td><td></td>
+<td><input id="L027" value="L027" onClick="L027()" type="button" style="height:22px;width:80px"></td><td></td>
+<td><input id="L028" value="L028" onClick="L028()" type="button" style="height:22px;width:80px"></td><td></td>
+<td><input id="L029" value="L029" onClick="L029()" type="button" style="height:22px;width:80px"></td><td></td>
+<td><input id="L030" value="L030" onClick="L030()" type="button" style="height:22px;width:80px"></td><td></td>
+<td><input id="L031" value="L031" onClick="L031()" type="button" style="height:22px;width:80px"></td><td></td>
+<td><input id="L032" value="L032" onClick="L032()" type="button" style="height:22px;width:80px"></td><td></td>
+<td><input id="L033" value="L033" onClick="L033()" type="button" style="height:22px;width:80px"></td><td></td>
+<td><input id="L034" value="L034" onClick="L034()" type="button" style="height:22px;width:80px"></td><td></td>
+<td><input id="L035" value="L035" onClick="L035()" type="button" style="height:22px;width:80px"></td><td></td>
+<td><input id="L036" value="L036" onClick="L036()" type="button" style="height:22px;width:80px"></td><td></td>
+</tr><tr>
+<td><input id="L037" value="L037" onClick="L037()" type="button" style="height:22px;width:80px"></td><td></td>
+<td><input id="L038" value="L038" onClick="L038()" type="button" style="height:22px;width:80px"></td><td></td>
+<td><input id="L039" value="L039" onClick="L039()" type="button" style="height:22px;width:80px"></td><td></td>
+<td><input id="L040" value="L040" onClick="L040()" type="button" style="height:22px;width:80px"></td><td></td>
+<td><input id="L041" value="L041" onClick="L041()" type="button" style="height:22px;width:80px"></td><td></td>
+<td><input id="L042" value="L042" onClick="L042()" type="button" style="height:22px;width:80px"></td><td></td>
+<td><input id="L043" value="L043" onClick="L043()" type="button" style="height:22px;width:80px"></td><td></td>
+<td><input id="L044" value="L044" onClick="L044()" type="button" style="height:22px;width:80px"></td><td></td>
+<td><input id="L045" value="L045" onClick="L045()" type="button" style="height:22px;width:80px"></td><td></td>
+<td><input id="L046" value="L046" onClick="L046()" type="button" style="height:22px;width:80px"></td><td></td>
+<td><input id="L047" value="L047" onClick="L047()" type="button" style="height:22px;width:80px"></td><td></td>
+</tr>
+</table>
+</body>
+</html>
